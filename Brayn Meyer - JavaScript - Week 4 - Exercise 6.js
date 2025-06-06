@@ -159,7 +159,7 @@ function multiple_users_parallel(){
         }
     }) 
     const promise4 = new Promise((resolve, reject) => {
-        let data = 0
+        let data = 76886
         if (data <= 0){
             console.error("User data is invalid.")
             resolve('ID undefined.')
@@ -180,16 +180,16 @@ multiple_users_parallel()
 // - Combine user and posts data
 // - Handle errors appropriately
 function unify_data(user, post){
-    console.log(user)
-    console.log(post)
     return Object.assign(user, post)
 }
 function fetching_user_and_post_data(){
     try{
         let user_data = [user_data_maker(45345, "John", "John@gmail.com", "04/02/88"), user_data_maker(54666, "Luke", "Luke@gmail.com", "04/06/98"), user_data_maker(76886, "Henry", "Henry@gmail.com", "07/09/78")]
-        let post_data = [post_data_maker(post_data_maker("098", "cats", "pictures of cats", "43535"), post_data_maker("098", "cats", "pictures of cats", "78905"), post_data_maker("098", "cats", "pictures of cats", "98764"))]
-        for (i of user_data.length){
-            console.log(unify_data(i, post_data[i]))
+        let post_data = [post_data_maker(45345, "cats", "pictures of cats", "43535"), post_data_maker(54666, "cats", "pictures of cats", "78905"), post_data_maker(76886, "cats", "pictures of cats", "98764")]
+        let x = 0
+        for (i of user_data){
+            console.log(unify_data(i, post_data[x]))
+            x++
         }
     } catch {
         console.error("Data is invalid.")
